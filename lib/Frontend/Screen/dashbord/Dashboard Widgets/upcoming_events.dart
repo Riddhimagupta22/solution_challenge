@@ -25,8 +25,8 @@ class UpcomingEvents extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         ListView.builder(
-          shrinkWrap: true, // Important for embedding in other widgets
-          physics: NeverScrollableScrollPhysics(), // Prevents nested scrolling issues
+          shrinkWrap: true,
+          physics: NeverScrollableScrollPhysics(),
           itemCount: events.length,
           itemBuilder: (context, index) {
             final event = events[index];

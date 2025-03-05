@@ -7,13 +7,13 @@ class MessageList extends StatelessWidget {
       "image": "Assets/images/user1.png",
       "title": "abc",
       "subtitle": "Investment proposal discussion",
-      "icon": Icons.send, // Store icon directly as IconData
+      "icon": Icons.send,
     },
     {
       "image": "Assets/images/user2.png",
       "title": "de",
       "subtitle": "Connection Request",
-      "icon": Icons.person_add_alt_1, // Store icon directly as IconData
+      "icon": Icons.person_add_alt_1,
     },
   ];
 
@@ -23,8 +23,8 @@ class MessageList extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         ListView.builder(
-          shrinkWrap: true, // Important for embedding in other widgets
-          physics: NeverScrollableScrollPhysics(), // Prevents nested scrolling issues
+          shrinkWrap: true,
+          physics: NeverScrollableScrollPhysics(),
           itemCount: messages.length,
           itemBuilder: (context, index) {
             final message = messages[index];
@@ -59,7 +59,7 @@ class MessageList extends StatelessWidget {
                         ],
                       ),
                     ),
-                    Icon(message['icon'], ), // Correct icon handling
+                    Icon(message['icon'], ),
                   ],
                 ),
               ),

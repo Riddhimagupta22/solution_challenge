@@ -67,37 +67,3 @@ class TrendingStartupCard extends StatelessWidget {
     );
   }
 }
-
-// class TrendingStartupsList extends StatelessWidget {
-//   final List<Map<String, String>> startups = [
-//     {
-//       "image": "Assets/images/crypto_trade.png",
-//       "title": "CryptoTrade",
-//       "subtitle": "+125% growth"
-//     },
-//     {
-//       "image": "Assets/images/edu_tech.png",
-//       "title": "EduTech",
-//       "subtitle": "+85% growth"
-//     },
-//   ];
-//
-//   @override
-//   Widget build(BuildContext context) {
-//     return SizedBox(
-//       height: 190, // Adjusted height to fit card size
-//       child: ListView.builder(
-//         scrollDirection: Axis.horizontal,
-//         itemCount: startups.length,
-//         padding: EdgeInsets.symmetric(horizontal: 10),
-//         itemBuilder: (context, index) {
-//           return TrendingStartupCard(
-//             imageUrl: startups[index]["image"]!,
-//             title: startups[index]["title"]!,
-//             subtitle: startups[index]["subtitle"]!,
-//           );
-//         },
-//       ),
-//     );
-//   }
-// }

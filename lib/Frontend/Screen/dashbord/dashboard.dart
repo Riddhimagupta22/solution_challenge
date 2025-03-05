@@ -27,11 +27,11 @@ class Dashboard extends StatelessWidget {
         leading: Padding(
           padding: const EdgeInsets.all(8.0),
           child: CircleAvatar(
-            backgroundImage: AssetImage("Assets/images/profile.png"), // Ensure asset path is correct
+            backgroundImage: AssetImage("Assets/images/profile.png"),
           ),
         ),
         title: Column(
-          crossAxisAlignment: CrossAxisAlignment.start, // Align text to the left
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text("Welcome", style: TextStyle(fontSize: 16, fontWeight: FontWeight.w600)),
             Text("User Name", style: TextStyle(fontSize: 14, color: Colors.grey[600])),
@@ -47,12 +47,12 @@ class Dashboard extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              DashboardStats(),  // Ensure this widget exists in your project
+              DashboardStats(),
               SizedBox(height: 15),
 
               CustomWidgets.CustomDashboardText('View All', 'Featured Startups'),
               StartupCard(
-                imageUrl: "Assets/images/IMG@1x (9).png", // Ensure correct asset path
+                imageUrl: "Assets/images/IMG@1x (9).png",
                 title: "EcoTech Solutions",
                 subtitle: "Sustainable energy management platform",
                 fundingStage: "Series A",

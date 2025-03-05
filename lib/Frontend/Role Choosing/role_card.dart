@@ -11,10 +11,10 @@ class RoleCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Card(
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
-      elevation: 4, // Gives a slight shadow effect
+      elevation: 4,
       child: Container(
-        width: 150, // Adjust width as needed
-        height: 200, // Adjust height as needed
+        width: 150,
+        height: 200,
         padding: EdgeInsets.all(8),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
@@ -24,7 +24,7 @@ class RoleCard extends StatelessWidget {
               child: Image.asset(
                 image,
                 width: double.infinity,
-                height: 100, // Adjust the height of the image
+                height: 100,
                 fit: BoxFit.cover,
               ),
             ),
