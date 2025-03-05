@@ -2,8 +2,9 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:solution_chanllenge/Frontend/Auth/role_chossing.dart';
+
 import 'package:solution_chanllenge/Frontend/Auth/signup_screen.dart';
+import 'package:solution_chanllenge/Frontend/Role%20Chossing/role_chossing.dart';
 import '../../Backend/Service/Auth Service/auth_service.dart';
 import '../Features/Widgets/custom_widgets.dart';
 import '../Features/bottomnav_bar.dart';

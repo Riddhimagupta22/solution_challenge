@@ -1,13 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:solution_chanllenge/Frontend/Role%20Chossing/role_card.dart';
 
 class RoleChossing extends StatelessWidget {
   final List<Map<String, String>> roles = [
-    {"title": "Entrepreneur", "subtitle": "Launch and grow your startup", "image": "assets/entrepreneur.jpg"},
-    {"title": "Investor", "subtitle": "Fund promising ventures", "image": "assets/investor.jpg"},
-    {"title": "Mentor", "subtitle": "Share your expertise", "image": "assets/mentor.jpg"},
-    {"title": "Incubator", "subtitle": "Support innovation", "image": "assets/incubator.jpg"},
+    {"title": "Entrepreneur", "subtitle": "Launch and grow your startup", "image": "Assets/images/IMG@1x (5).png"},
+    {"title": "Investor", "subtitle": "Fund promising ventures", "image": "Assets/images/IMG@1x (6).png"},
+    {"title": "Mentor", "subtitle": "Share your expertise", "image": "Assets/images/IMG@1x (8).png"},
+    {"title": "Incubator", "subtitle": "Support innovation", "image": "Assets/images/IMG@1x (7).png"},
   ];
 
   @override
@@ -93,38 +94,3 @@ class RoleChossing extends StatelessWidget {
   }
 }
 
-class RoleCard extends StatelessWidget {
-  final String title;
-  final String subtitle;
-  final String image;
-
-  RoleCard({required this.title, required this.subtitle, required this.image});
-
-  @override
-  Widget build(BuildContext context) {
-    return Card(
-      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: [
-          Expanded(
-            child: ClipRRect(
-              borderRadius: BorderRadius.vertical(top: Radius.circular(10)),
-              child: Image.asset(image, fit: BoxFit.cover, width: double.infinity),
-            ),
-          ),
-          Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: Column(
-              children: [
-                Text(title, style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold)),
-                SizedBox(height: 4),
-                Text(subtitle, textAlign: TextAlign.center, style: TextStyle(fontSize: 12, color: Colors.black54)),
-              ],
-            ),
-          ),
-        ],
-      ),
-    );
-  }
-}
