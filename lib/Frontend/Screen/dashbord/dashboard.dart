@@ -1,37 +1,95 @@
 import 'package:flutter/material.dart';
 import 'package:solution_chanllenge/Frontend/Features/Widgets/custom_widgets.dart';
 import 'package:solution_chanllenge/Frontend/Screen/dashbord/Dashboard%20Widgets/feature_widgets.dart';
+import 'package:solution_chanllenge/Frontend/Screen/dashbord/Dashboard%20Widgets/message_widget.dart';
+import 'package:solution_chanllenge/Frontend/Screen/dashbord/Dashboard%20Widgets/startup_card.dart';
+import 'package:solution_chanllenge/Frontend/Screen/dashbord/Dashboard%20Widgets/trending_startups.dart';
+import 'package:solution_chanllenge/Frontend/Screen/dashbord/Dashboard%20Widgets/upcoming_events.dart';
 
 class Dashboard extends StatelessWidget {
-  // final List<Map<String, String>> features = [
-  //   {"title": "Portfolio Value", "subtitle": "\$2.4M"},
-  //   {"title": "Connections", "subtitle": "33"},
-  //   {"title": "Pending", "subtitle": "12"},
-  // ];
-
+  final List<Map<String, String>> startups = [
+    {
+      "image": "Assets/images/IMG@1x (10).png",
+      "title": "OctoTrade",
+      "subtitle": "+100% growth"
+    },
+    {
+      "image": "Assets/images/IMG@1x (11).png",
+      "title": "EdTech",
+      "subtitle": "+100% growth"
+    },
+  ];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Padding(
-        padding: const EdgeInsets.only(left: 10.0, right: 10, top: 30),
-        child: Column(
+      appBar: AppBar(
+        leading: Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: CircleAvatar(
+            backgroundImage: AssetImage("Assets/images/profile.png"), // Ensure asset path is correct
+          ),
+        ),
+        title: Column(
+          crossAxisAlignment: CrossAxisAlignment.start, // Align text to the left
           children: [
-            ListTile(
-              leading: CircleAvatar(
-                backgroundImage: AssetImage("assetName"),
-                radius: 30,
-              ),
-              title: Text("Welcome,"),
-              subtitle: Text("abcd"),
-              trailing: IconButton(
-                onPressed: () {},
-                icon: Icon(Icons.notifications),
-              ),
-            ),
-            DashboardStats(),
-            SizedBox(height: 15),
-            CustomWidgets.CustomDashboardText('View All', 'Featured Startups'),
+            Text("Welcome", style: TextStyle(fontSize: 16, fontWeight: FontWeight.w600)),
+            Text("User Name", style: TextStyle(fontSize: 14, color: Colors.grey[600])),
           ],
+        ),
+        actions: [
+          IconButton(onPressed: () {}, icon: Icon(Icons.notifications)),
+        ],
+      ),
+      body: SingleChildScrollView(
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 10.0, vertical: 9),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              DashboardStats(),  // Ensure this widget exists in your project
+              SizedBox(height: 15),
+
+              CustomWidgets.CustomDashboardText('View All', 'Featured Startups'),
+              StartupCard(
+                imageUrl: "Assets/images/IMG@1x (9).png", // Ensure correct asset path
+                title: "EcoTech Solutions",
+                subtitle: "Sustainable energy management platform",
+                fundingStage: "Series A",
+                raisedAmount: "\$5M",
+              ),
+              SizedBox(height: 15),
+              CustomWidgets.CustomDashboardText('View calendar', 'Upcoming Events'),
+              SizedBox(height: 15),
+              UpcomingEvents(),
+
+              SizedBox(height: 15),
+              CustomWidgets.CustomDashboardText('View more', 'Trending Startups'),
+              SizedBox(height: 15),
+              SizedBox(
+                height: 190, // Adjusted height to fit card size
+                child: ListView.builder(
+                  scrollDirection: Axis.horizontal,
+                  itemCount: startups.length,
+                  itemBuilder: (context, index) {
+                    return TrendingStartupCard(
+                      imageUrl: startups[index]["image"]!,
+                      title: startups[index]["title"]!,
+                      subtitle: startups[index]["subtitle"]!,
+                    );
+                  },
+                ),
+              ),
+
+              SizedBox(height: 15),
+              CustomWidgets.CustomDashboardText('View all', 'Messages & Requests'),
+              SizedBox(height: 15),
+              MessageList(),
+
+              SizedBox(height: 15),
+              CustomWidgets.CustomDashboardText('View all', 'Success Stories'),
+              SizedBox(height: 15),
+            ],
+          ),
         ),
       ),
     );

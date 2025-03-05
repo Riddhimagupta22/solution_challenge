@@ -156,7 +156,10 @@ class SignUpScreen extends StatelessWidget {
                     SizedBox(height:  scrHeight * 0.13),
                     GestureDetector(
                       onTap: () {
-                        Get.to(LoginScreen());
+                        Navigator.pushReplacement(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => LoginScreen()));
                       },
                       child:  RichText(text:
                       TextSpan(

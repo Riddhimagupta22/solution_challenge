@@ -41,7 +41,7 @@ class CustomWidgets {
       children: [
         Text(text,style: GoogleFonts.inter(fontSize: 18,fontWeight: FontWeight.w500 ),),
         Padding(
-          padding: const EdgeInsets.only(right: 8.0),
+          padding: const EdgeInsets.only(right: 6.0),
           child: Text(label,style: GoogleFonts.inter(fontWeight: FontWeight.w400,fontSize: 15),),
         ),
 

@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:solution_chanllenge/Frontend/Features/bottomnav_bar.dart';
 import 'package:solution_chanllenge/Frontend/Role%20Choosing/role_card.dart';
-import 'package:solution_chanllenge/Frontend/Screen/dashbord/dashboard.dart';
-
-
 
 class RoleChoosing extends StatelessWidget {
   final List<Map<String, String>> roles = [
@@ -30,7 +28,7 @@ class RoleChoosing extends StatelessWidget {
               Center(
                 child: Text(
                   "Choose Your Role",
-                  style: GoogleFonts.poppins(fontSize: 22, fontWeight: FontWeight.w700, height: 0),
+                  style: GoogleFonts.poppins(fontSize: 22, fontWeight: FontWeight.w700, height: 1.2),
                 ),
               ),
               Text(
@@ -39,8 +37,10 @@ class RoleChoosing extends StatelessWidget {
                 style: GoogleFonts.poppins(fontSize: 15, color: Colors.black54),
               ),
               SizedBox(height: 40),
-              Expanded(  // Move Expanded outside Center
+              Flexible(
                 child: GridView.builder(
+                  shrinkWrap: true,
+                  physics: BouncingScrollPhysics(),
                   gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                     crossAxisCount: 2,
                     crossAxisSpacing: 10,
@@ -50,17 +50,20 @@ class RoleChoosing extends StatelessWidget {
                   itemCount: roles.length,
                   itemBuilder: (context, index) {
                     return RoleCard(
-                      title: roles[index]['title']!,
-                      subtitle: roles[index]['subtitle']!,
-                      image: roles[index]['image']!,
+                      title: roles[index]['title']??"Default title",
+                      subtitle: roles[index]['subtitle']??"Default subtitle",
+                      image: roles[index]['image']??"Default img",
                     );
                   },
                 ),
               ),
-              SizedBox(height: 15),
+              SizedBox(height: 50),
               ElevatedButton(
                 onPressed: () {
-                  Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => Dashboard()));
+                  Navigator.pushReplacement(
+                    context,
+                    MaterialPageRoute(builder: (context) => BottomNavbar()),
+                  );
                 },
                 style: ElevatedButton.styleFrom(
                   backgroundColor: Colors.blue[800],
