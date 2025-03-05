@@ -3,6 +3,7 @@ import 'package:solution_chanllenge/Frontend/Features/Widgets/custom_widgets.dar
 import 'package:solution_chanllenge/Frontend/Screen/dashbord/Dashboard%20Widgets/feature_widgets.dart';
 import 'package:solution_chanllenge/Frontend/Screen/dashbord/Dashboard%20Widgets/message_widget.dart';
 import 'package:solution_chanllenge/Frontend/Screen/dashbord/Dashboard%20Widgets/startup_card.dart';
+import 'package:solution_chanllenge/Frontend/Screen/dashbord/Dashboard%20Widgets/success_story.dart';
 import 'package:solution_chanllenge/Frontend/Screen/dashbord/Dashboard%20Widgets/trending_startups.dart';
 import 'package:solution_chanllenge/Frontend/Screen/dashbord/Dashboard%20Widgets/upcoming_events.dart';
 
@@ -88,6 +89,7 @@ class Dashboard extends StatelessWidget {
               SizedBox(height: 15),
               CustomWidgets.CustomDashboardText('View all', 'Success Stories'),
               SizedBox(height: 15),
+              SuccessStoryCard(imageUrl: "Assets/images/IMG@1x (9).png", title: "Swiggy", subtitle: "No order Too small", imageUrl1: "imageUrl1", name: "Sriharsha Majety", designation: 'CEO and Founders')
             ],
           ),
         ),

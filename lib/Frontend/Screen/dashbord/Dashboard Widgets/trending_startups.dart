@@ -15,7 +15,8 @@ class TrendingStartupCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 179, // Adjust width for better spacing
+      width: 179,
+
       margin: EdgeInsets.symmetric(horizontal: 8, vertical: 10),
       padding: EdgeInsets.only(left: 8, right: 8, top: 15),
       decoration: BoxDecoration(
