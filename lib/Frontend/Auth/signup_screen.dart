@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:solution_chanllenge/Frontend/Role%20Chossing/role_chossing.dart';
+import 'package:solution_chanllenge/Frontend/Role%20Choosing/role_chossing.dart';
 import '../../Backend/Service/Auth Service/auth_service.dart';
 import '../Features/Widgets/custom_widgets.dart';
 import 'login_screen.dart';
@@ -104,7 +104,7 @@ class SignUpScreen extends StatelessWidget {
                                   context,
                                   MaterialPageRoute(
                                       builder: (context) =>
-                                          RoleChossing()));
+                                          RoleChoosing()));
                             } else {
                               Get.snackbar("Error", value);
                             }
@@ -138,7 +138,7 @@ class SignUpScreen extends StatelessWidget {
                           Navigator.pushReplacement(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => RoleChossing()));
+                                  builder: (context) => RoleChoosing()));
                         } else {
                           Get.snackbar('Error', 'Sign In failed');
                         }

@@ -33,4 +33,19 @@ class CustomWidgets {
       ),
     );
   }
+
+  static CustomDashboardText(String label,
+      String text,){
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      children: [
+        Text(text,style: GoogleFonts.inter(fontSize: 18,fontWeight: FontWeight.w500 ),),
+        Padding(
+          padding: const EdgeInsets.only(right: 8.0),
+          child: Text(label,style: GoogleFonts.inter(fontWeight: FontWeight.w400,fontSize: 15),),
+        ),
+
+      ],
+    );
+  }
 }
