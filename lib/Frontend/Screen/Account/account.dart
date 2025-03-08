@@ -86,8 +86,7 @@ class Account extends StatelessWidget {
             ),
 
             // My Startups
-            ProfileSection(
-              title: "My Startups",
+            ProfileSection(title: "My Startups",
               icon: null,
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
