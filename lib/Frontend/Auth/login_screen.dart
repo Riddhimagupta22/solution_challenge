@@ -47,7 +47,7 @@ class _LoginScreenState extends State<LoginScreen> {
             //       fontWeight: FontWeight.w700,
             //     ),
             //   ),
-            ),
+            // ),
             // Positioned(
             //   top: scrHeight * 0.183,
             //   right: scrWidth * 0.49,

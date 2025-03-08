@@ -1,5 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:solution_chanllenge/Frontend/Screen/Account/Account%20Widgets/personal_info.dart';
+import 'package:solution_chanllenge/Frontend/Screen/Account/Account%20Widgets/profile_section.dart';
+import 'package:solution_chanllenge/Frontend/Screen/Account/Account%20Widgets/security.dart';
+import 'package:solution_chanllenge/Frontend/Screen/Account/Account%20Widgets/startup_card.dart';
+import 'package:solution_chanllenge/Frontend/Screen/Account/Account%20Widgets/tag.dart';
+import 'package:solution_chanllenge/Frontend/Screen/Account/Account%20Widgets/tag.dart';
+import 'package:solution_chanllenge/Frontend/Screen/Account/Account%20Widgets/toggle.dart';
 
 class Account extends StatelessWidget {
   const Account({super.key});
@@ -7,13 +14,11 @@ class Account extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.grey[200],
       body: SingleChildScrollView(
         child: Column(
           children: [
-            // Profile Header
             Container(
-              height: 180,
+              height: 250,
               decoration: BoxDecoration(
                 gradient: LinearGradient(
                   colors: [Colors.black87, Colors.grey],
@@ -28,9 +33,8 @@ class Account extends StatelessWidget {
                     Stack(
                       children: [
                         CircleAvatar(
-                          radius: 40,
-                          backgroundImage: AssetImage(
-                              ''),
+                          radius: 50,
+                          child: Icon(Icons.perm_identity,size: 45,),
                         ),
                         Positioned(
                           bottom: 0,
@@ -55,185 +59,86 @@ class Account extends StatelessWidget {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        _buildTag("Founder"),
-                        _buildTag("Investor"),
+                        RoleTag(text: "Founder"),
+                        RoleTag(text: "Investor")
                       ],
                     ),
-                    SizedBox(height: 8),
+                    SizedBox(height: 9),
                   ],
                 ),
               ),
             ),
+            SizedBox(height: 9),
 
-            // Personal Information
-            _buildSection(
+            ProfileSection(
               title: "Personal Information",
               icon: Icons.edit,
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  _buildTextField("Full Name", "Alexander Mitchell"),
-                  _buildTextField("Bio",
-                      "Serial entrepreneur with 10+ years experience in SaaS and fintech. Currently building next-gen financial solutions for startups."),
+                  PersonalInfo(label: "Full Name", value: "Alexander Mitchell"),
+                  PersonalInfo(
+                      label: "Bio",
+                      value:
+                          "Serial entrepreneur with 10+ years experience in SaaS and fintech. Currently building next-gen financial solutions for startups."),
                 ],
               ),
             ),
 
             // My Startups
-            _buildSection(
+            ProfileSection(
               title: "My Startups",
+              icon: null,
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  _buildStartupCard("Boat", "Founder", "Assets/images/Boat-Logo_2.webp"),
-                  _buildStartupCard(
-                      "PhonePe", "Investor", "Assets/images/th.jpg"),
+                  StartupCard(
+                      imagePath: "Assets/images/Boat-Logo_2.webp",
+                      title: "Boat",
+                      subtitle: "Founder"),
+                  StartupCard(
+                      imagePath: "Assets/images/th.jpg",
+                      title: "PhonePe",
+                      subtitle: "Investor")
                 ],
               ),
             ),
 
             // Notification Settings
-            _buildSection(
+            ProfileSection(
               title: "Notification Settings",
+              icon: null,
               child: Column(
                 children: [
-                  _buildToggle("Push Notifications", "Updates and alerts"),
-                  _buildToggle("Email Notifications", "Weekly digest"),
+                  Toggle(
+                      title: "Push Notifications",
+                      subtitle: "Updates and alerts"),
+                  Toggle(
+                      title: "Email Notifications", subtitle: "Weekly digest"),
                 ],
               ),
             ),
 
             // Security Settings
-            _buildSection(
+            ProfileSection(
               title: "Security",
+              icon: null,
               child: Column(
                 children: [
-                  _buildListTile("Change Password", Icons.lock, Colors.grey),
-                  _buildListTile("Logout", Icons.logout, Colors.red),
+                  Security(
+                    title: "Change Password",
+                    icon: Icons.lock,
+                    color: Colors.grey,
+                  ),
+                  Security(
+                      title: "Logout", icon: Icons.logout, color: Colors.red),
                 ],
               ),
             ),
-
             SizedBox(height: 20),
           ],
         ),
       ),
-    );
-  }
-
-  // Profile Role Tags
-  Widget _buildTag(String text) {
-    return Container(
-      margin: EdgeInsets.symmetric(horizontal: 4),
-      padding: EdgeInsets.symmetric(horizontal: 10, vertical: 4),
-      decoration: BoxDecoration(
-        color: Colors.white.withOpacity(0.2),
-        borderRadius: BorderRadius.circular(20),
-      ),
-      child: Text(
-        text,
-        style: GoogleFonts.poppins(fontSize: 12, color: Colors.white),
-      ),
-    );
-  }
-
-  // Reusable Section Widget
-  Widget _buildSection(
-      {required String title, IconData? icon, required Widget child}) {
-    return Container(
-      margin: EdgeInsets.symmetric(horizontal: 16, vertical: 10),
-      padding: EdgeInsets.all(12),
-      decoration: BoxDecoration(
-          color: Colors.white, borderRadius: BorderRadius.circular(8)),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Row(
-            children: [
-              Expanded(
-                  child: Text(title,
-                      style: GoogleFonts.poppins(
-                          fontSize: 16, fontWeight: FontWeight.bold))),
-              if (icon != null) Icon(icon, size: 18, color: Colors.black54),
-            ],
-          ),
-          SizedBox(height: 8),
-          child,
-        ],
-      ),
-    );
-  }
-
-  // Reusable Text Field
-  Widget _buildTextField(String label, String value) {
-    return Padding(
-      padding: const EdgeInsets.only(bottom: 8.0),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Text(label,
-              style: GoogleFonts.poppins(
-                  fontSize: 14,
-                  fontWeight: FontWeight.w500,
-                  color: Colors.grey[600])),
-          SizedBox(height: 4),
-          Text(value, style: GoogleFonts.poppins(fontSize: 14)),
-        ],
-      ),
-    );
-  }
-
-  // Startup Cards
-  Widget _buildStartupCard(String title, String subtitle, String imagePath) {
-    return Expanded(
-      child: Container(
-        margin: EdgeInsets.symmetric(horizontal: 4),
-        padding: EdgeInsets.all(8),
-        decoration: BoxDecoration(
-            color: Colors.white,
-            borderRadius: BorderRadius.circular(8),
-            boxShadow: [
-              BoxShadow(
-                  color: Colors.black12,
-                  blurRadius: 5,
-                  spreadRadius: 2,
-                  offset: Offset(0, 2)),
-            ]),
-        child: Column(
-          children: [
-            Image.asset(imagePath, height: 40),
-            SizedBox(height: 8),
-            Text(title,
-                style: GoogleFonts.poppins(
-                    fontSize: 14, fontWeight: FontWeight.bold)),
-            Text(subtitle,
-                style: GoogleFonts.poppins(fontSize: 12, color: Colors.grey)),
-          ],
-        ),
-      ),
-    );
-  }
-
-  // Toggle Switch
-  Widget _buildToggle(String title, String subtitle) {
-    return ListTile(
-      title: Text(title,
-          style:
-              GoogleFonts.poppins(fontSize: 14, fontWeight: FontWeight.w500)),
-      subtitle: Text(subtitle,
-          style: GoogleFonts.poppins(fontSize: 12, color: Colors.grey)),
-      trailing: Switch(value: false, onChanged: (val) {}),
-    );
-  }
-
-  // List Tile for Security Section
-  Widget _buildListTile(String title, IconData icon, Color color) {
-    return ListTile(
-      leading: Icon(icon, color: color),
-      title: Text(title,
-          style: GoogleFonts.poppins(
-              fontSize: 14, fontWeight: FontWeight.w500, color: color)),
-      onTap: () {},
     );
   }
 }

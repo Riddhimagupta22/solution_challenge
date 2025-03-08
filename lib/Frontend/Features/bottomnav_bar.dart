@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:solution_chanllenge/Frontend/Screen/Add/add_starup.dart';
+import 'package:solution_chanllenge/Frontend/Screen/Chat/messages.dart';
 import '../Screen/Account/account.dart';
-import '../Screen/Chat/chat.dart';
-import '../Screen/Events/event.dart';
 import '../Screen/Explore/explore.dart';
 import '../Screen/dashbord/dashboard.dart';
 
@@ -31,8 +31,8 @@ class _BottomNavbarState extends State<BottomNavbar> {
         children: [
           Dashboard(),
           Explore(),
-          Chat(),
-          Event(),
+          AddStarup(),
+          Messages(),
           Account(),
         ],
       ),
@@ -52,9 +52,9 @@ class _BottomNavbarState extends State<BottomNavbar> {
         BottomNavigationBarItem(icon: Icon(Icons.home_outlined), label: 'Dahboard'),
         BottomNavigationBarItem(icon: Icon(Icons.explore_rounded), label: 'Explore'),
         BottomNavigationBarItem(
-            icon: Icon(Icons.chat_bubble_outline_rounded), label: 'Chat'),
+            icon: Icon(Icons.add_circle), label: 'Add'),
         BottomNavigationBarItem(
-            icon: Icon(Icons.notifications_none), label: 'Events'),
+            icon: Icon(Icons.chat_bubble_outline_rounded), label: 'Chat'),
         BottomNavigationBarItem(
             icon: Icon(Icons.account_circle_outlined), label: 'Account'),
       ]),
