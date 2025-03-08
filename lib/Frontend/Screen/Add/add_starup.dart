@@ -13,8 +13,7 @@ class AddStarup extends StatelessWidget {
           title: Text("Add Startup",
               style:
                   TextStyle(color: Colors.black, fontWeight: FontWeight.bold)),
-          backgroundColor: Colors.white,
-          elevation: 0,
+
           centerTitle: true,
         ),
         body: SingleChildScrollView(
@@ -85,7 +84,7 @@ class AddStarup extends StatelessWidget {
                   Text("Industry *",
                       style: TextStyle(fontWeight: FontWeight.bold)),
                   SizedBox(height: 8),
-                  DropdownButtonFormField<String>(
+                  DropdownButtonFormField<String>(alignment: Alignment.center,
                     decoration: InputDecoration(
                       hintText: "Select your Industry",
                       filled: true,  // Enable filling
@@ -150,19 +149,23 @@ class AddStarup extends StatelessWidget {
                   // Next Step Button
                   Center(
                     child: ElevatedButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        // Add your onPressed action here
+                      },
                       style: ElevatedButton.styleFrom(
-
-                        backgroundColor: Colors.blue,
-                        padding:
-                            EdgeInsets.symmetric(vertical: 14, ),
+                        backgroundColor: Colors.blue, // Button background color
+                        foregroundColor: Colors.white, // Text color
+                        minimumSize: Size(double.infinity, 50), // Full width with a height of 50
                         shape: RoundedRectangleBorder(
-
-                            borderRadius: BorderRadius.circular(10)),
+                          borderRadius: BorderRadius.circular(8), // Rounded corners
+                        ),
                       ),
-                      child: Text("Next Step",
-                          style: TextStyle(color: Colors.white, fontSize: 16)),
-                    ),
+                      child: Text(
+                        "Next Step",
+                        style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+                      ),
+                    )
+
                   ),
                 ],
               ),

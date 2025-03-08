@@ -21,6 +21,11 @@ class MyApp extends StatelessWidget {
     return GetMaterialApp(
       title: 'Flutter Demo',debugShowCheckedModeBanner: false,
       theme: ThemeData(
+        appBarTheme: AppBarTheme(
+          scrolledUnderElevation: 0,surfaceTintColor: Colors.transparent,
+          backgroundColor: Colors.transparent
+
+        ),
 
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.blue),
         useMaterial3: true,
