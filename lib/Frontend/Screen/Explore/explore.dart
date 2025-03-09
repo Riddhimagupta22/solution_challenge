@@ -3,6 +3,7 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:location/location.dart';
+import 'package:solution_chanllenge/Frontend/Screen/Explore/Explore%20Widgets/search_bar.dart';
 
 class Explore extends StatefulWidget {
   const Explore({super.key});
@@ -37,19 +38,22 @@ class _ExploreState extends State<Explore> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      body:
+                  GoogleMap(
 
-      body: GoogleMap(
-        onMapCreated: ((GoogleMapController controller)=> _mapController.complete(controller)),
-        initialCameraPosition: _kGooglePlex,
-        markers: {
-          if (_currentPosition != null)
-            Marker(
-              markerId: const MarkerId("_currentLocation"),
-              icon: BitmapDescriptor.defaultMarkerWithHue(BitmapDescriptor.hueBlue),
-              position: _currentPosition!,
-            ),
-        },
-      ),
+                    onMapCreated: ((GoogleMapController controller)=> _mapController.complete(controller)),
+                    initialCameraPosition: _kGooglePlex,
+                    markers: {
+                      if (_currentPosition != null)
+                        Marker(
+                          markerId: const MarkerId("_currentLocation"),
+                          icon: BitmapDescriptor.defaultMarkerWithHue(BitmapDescriptor.hueBlue),
+                          position: _currentPosition!,
+                        ),
+                    },
+                  ),
+
+
     );
   }
   Future<void> _cameraToPosition(LatLng position) async{
