@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:solution_chanllenge/Frontend/Screen/Add/add_starup.dart';
+import 'package:solution_chanllenge/Frontend/Screen/Add/Add%20Screens/add_starup.dart';
 import 'package:solution_chanllenge/Frontend/Screen/Chat/messages.dart';
 import '../Screen/Account/account.dart';
 import '../Screen/Explore/explore.dart';
@@ -31,7 +31,7 @@ class _BottomNavbarState extends State<BottomNavbar> {
         children: [
           Dashboard(),
           Explore(),
-          AddStarup(),
+          AddStartupScreen(),
           Messages(),
           Account(),
         ],
