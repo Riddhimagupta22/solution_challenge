@@ -87,8 +87,8 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                       ),
                       const Spacer(),
                       Container(
-                        height: 60,
-                        margin: const EdgeInsets.all(40),
+                        height: 53,
+                        margin: const EdgeInsets.all(10),
                         width: double.infinity,
                         child: ElevatedButton(
                           style: ElevatedButton.styleFrom(
