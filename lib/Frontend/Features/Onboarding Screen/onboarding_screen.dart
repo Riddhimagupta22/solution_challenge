@@ -50,7 +50,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Padding(
-                        padding: const EdgeInsets.only(top: 35.0),
+                        padding: const EdgeInsets.only(top: 45.0),
                         child: Image.asset(contents[i].image),
                       ),
                       Padding(
@@ -64,7 +64,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                         ),
                       ),
                       Padding(
-                        padding: const EdgeInsets.only(top: 18.0, left: 8),
+                        padding: const EdgeInsets.only(top: 20.0, left: 8),
                         child: Text(
                           contents[i].discription,
                           style: GoogleFonts.poppins(
@@ -73,7 +73,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                           ),
                         ),
                       ),
-                      const SizedBox(height: 20),
+                      const SizedBox(height: 95),
                       Center(
                         child: SmoothPageIndicator(
                           controller: _controller,
@@ -85,7 +85,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                           ),
                         ),
                       ),
-                      const Spacer(),
+                      const SizedBox(height: 15),
                       Container(
                         height: 53,
                         margin: const EdgeInsets.all(10),
