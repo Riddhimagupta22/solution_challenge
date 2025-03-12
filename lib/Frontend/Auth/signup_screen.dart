@@ -24,34 +24,7 @@ class SignUpScreen extends StatelessWidget {
       body: SingleChildScrollView(
         child: Stack(
           children: [
-            // Positioned(
-            //   top: scrHeight * 0.128,
-            //   right: scrWidth * 0.43,
-            //   width: scrWidth * 0.7,
-            //   height: scrHeight * 0.08,
-            //   child:  Text('Login',textAlign: TextAlign.center,
-            //     style: GoogleFonts.inter(
-            //       letterSpacing: 1,
-            //       fontSize: 30,
-            //       fontWeight: FontWeight.w700,
-            //     ),
-            //   ),
-            // ),
-            // Positioned(
-            //   top: scrHeight * 0.183,
-            //   right: scrWidth * 0.49,
-            //   width: scrWidth * 0.7,
-            //   height: scrHeight * 0.08,
-            //   child:  Text('And',
-            //     textAlign: TextAlign.center,
-            //     style: GoogleFonts.inter(
-            //
-            //         letterSpacing: 1,
-            //         fontSize: 24,
-            //         fontWeight: FontWeight.w700,
-            //         color: Color(0xFFFFB300)
-            //     ),
-            //   ),),
+            // textfield
 
             Padding(
               padding:  EdgeInsets.only(left: scrWidth * 0.1,right: scrWidth * 0.1,top: scrHeight * 0.3,),
