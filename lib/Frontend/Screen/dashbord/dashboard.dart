@@ -89,7 +89,7 @@ class Dashboard extends StatelessWidget {
               SizedBox(height: 15),
               CustomWidgets.CustomDashboardText('View all', 'Success Stories'),
               SizedBox(height: 15),
-              SuccessStoryCard(imageUrl: "Assets/images/IMG@1x (9).png", title: "Swiggy", subtitle: "No order Too small", imageUrl1: "imageUrl1", name: "Sriharsha Majety", designation: 'CEO and Founders')
+              SuccessStoryCard(imageUrl: "Assets/images/IMG@1x (9).png", title: "Swiggy", subtitle: "No order Too small", imageUrl1: "Assets/images/sriharsha majesty.png", name: "Sriharsha Majety", designation: 'CEO and Founders')
             ],
           ),
         ),

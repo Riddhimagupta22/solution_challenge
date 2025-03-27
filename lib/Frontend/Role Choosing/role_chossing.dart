@@ -16,7 +16,7 @@ class RoleChoosing extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          "StartWise",
+          "SparkHub",
           style: GoogleFonts.inter(fontSize: 23, fontWeight: FontWeight.w800),
         ),
       ),

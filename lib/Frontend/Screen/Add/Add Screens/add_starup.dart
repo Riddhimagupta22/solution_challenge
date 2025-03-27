@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:solution_chanllenge/Frontend/Screen/Add/Add%20Screens/business_model.dart';
 import 'package:solution_chanllenge/Frontend/Screen/Add/Add%20Widgets/upload_image.dart';
 
@@ -17,7 +18,7 @@ class _AddStartupScreenState extends State<AddStartupScreen> {
   String? _selectedIndustry;
 
   void _updateProgress() {
-    double progress = 0.2; // Base progress for starting the form
+    double progress = 0.2;
 
     if (_startupNameController.text.isNotEmpty) progress += 0.2;
     if (_selectedIndustry != null) progress += 0.2;
@@ -34,13 +35,9 @@ class _AddStartupScreenState extends State<AddStartupScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          leading: IconButton(
-            icon: Icon(Icons.arrow_back, color: Colors.black),
-            onPressed: () {}, // Define back action
-          ),
           title: Text("Add Startup",
               style:
-              TextStyle(color: Colors.black, fontWeight: FontWeight.bold)),
+             GoogleFonts.poppins(color: Colors.black, fontWeight: FontWeight.w600)),
           centerTitle: true,
         ),
         body: SingleChildScrollView(
@@ -77,12 +74,11 @@ class _AddStartupScreenState extends State<AddStartupScreen> {
                       ],
                     ),
                   ),
-                  SizedBox(height: 16),
                   Padding(
                     padding: const EdgeInsets.all(8.0),
                     child: Text("Step 1: Basic Information",
-                        style: TextStyle(
-                            fontWeight: FontWeight.bold, color: Colors.grey)),
+                        style: GoogleFonts.poppins(
+                            fontWeight: FontWeight.w500, color: Colors.grey)),
                   ),
 
                   Container(
@@ -96,15 +92,14 @@ class _AddStartupScreenState extends State<AddStartupScreen> {
                           SizedBox(height: 8),
                           Center(
                               child: Text("Upload startup logo",
-                                  style: TextStyle(color: Colors.grey))),
+                                  style: GoogleFonts.poppins(color: Colors.grey))),
 
                           SizedBox(height: 24),
                           Text("Startup Name *",
-                              style: TextStyle(fontWeight: FontWeight.bold)),
+                              style: GoogleFonts.poppins(fontWeight: FontWeight.w500),),
                           SizedBox(height: 8),
                           TextField(
                             controller: _startupNameController,
-                            onChanged: (value) => _updateProgress(),
                             decoration: InputDecoration(
                               hintText: "Enter your startup name",
                               filled: true,
@@ -117,7 +112,7 @@ class _AddStartupScreenState extends State<AddStartupScreen> {
 
                           // Industry Dropdown
                           Text("Industry *",
-                              style: TextStyle(fontWeight: FontWeight.bold)),
+                            style: GoogleFonts.poppins(fontWeight: FontWeight.w500),),
                           SizedBox(height: 8),
                           DropdownButtonFormField<String>(
                             alignment: Alignment.center,
@@ -132,17 +127,14 @@ class _AddStartupScreenState extends State<AddStartupScreen> {
                                 .map((String category) {
                               return DropdownMenuItem(
                                   value: category, child: Text(category));
-                            }).toList(),
-                            onChanged: (value) {
-                              _selectedIndustry = value;
-                              _updateProgress();
-                            },
+                            }).toList(), onChanged: (String? value) {  },
+
                           ),
                           SizedBox(height: 16),
 
                           // Business Model Input
                           Text("Business Model *",
-                              style: TextStyle(fontWeight: FontWeight.bold)),
+                            style: GoogleFonts.poppins(fontWeight: FontWeight.w500),),
                           SizedBox(height: 8),
                           TextField(
                             controller: _businessModelController,
@@ -160,14 +152,14 @@ class _AddStartupScreenState extends State<AddStartupScreen> {
 
                           // Market Traction Section
                           Text("Market Traction",
-                              style: TextStyle(fontWeight: FontWeight.bold)),
+                            style: GoogleFonts.poppins(fontWeight: FontWeight.w500),),
                           SizedBox(height: 8),
                           Row(
                             children: [
                               Expanded(
                                 child: TextField(
                                   controller: _monthlyRevenueController,
-                                  onChanged: (value) => _updateProgress(),
+
                                   decoration: InputDecoration(
                                     filled: true,
                                     fillColor: Colors.white,
@@ -181,7 +173,7 @@ class _AddStartupScreenState extends State<AddStartupScreen> {
                               Expanded(
                                 child: TextField(
                                   controller: _activeUsersController,
-                                  onChanged: (value) => _updateProgress(),
+
                                   decoration: InputDecoration(
                                     filled: true,
                                     fillColor: Colors.white,
@@ -198,8 +190,10 @@ class _AddStartupScreenState extends State<AddStartupScreen> {
                           // Next Step Button
                           Center(
                               child: ElevatedButton(
+
                                 onPressed: () {
-                                 Get.to( BusinessModel());
+                                  onChanged: (value) => _updateProgress();
+                                  Navigator.push(context,MaterialPageRoute(builder: (context) =>BusinessModel()));
                                 },
                                 style: ElevatedButton.styleFrom(
                                   backgroundColor:
@@ -213,8 +207,7 @@ class _AddStartupScreenState extends State<AddStartupScreen> {
                                 ),
                                 child: Text(
                                   "Next Step",
-                                  style: TextStyle(
-                                      fontSize: 16, fontWeight: FontWeight.bold),
+                                  style: GoogleFonts.poppins(fontSize: 16, fontWeight: FontWeight.w600),
                                 ),
                               )),
                         ],

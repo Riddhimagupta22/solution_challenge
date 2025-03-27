@@ -14,7 +14,7 @@ List<UnbordingContent> contents = [
   ),
   UnbordingContent(
       title: 'Connect & Communicate',
-      image: 'Assets/images/IMG@1x (2) (1).png',
+      image: 'Assets/images/startup.png',
       discription: "Seamlessly collaborate with team members""through our integrated messaging platform.""Share ideas, files, and updates in real-time "
   ),
   UnbordingContent(

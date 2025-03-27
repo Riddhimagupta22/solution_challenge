@@ -97,7 +97,7 @@ class SignUpScreen extends StatelessWidget {
                               MaterialPageRoute(
                                   builder: (context) => RoleChoosing()));
                         } else {
-                          Get.snackbar('Error', 'Sign In failed');
+                          // Get.snackbar('Error', 'Sign In failed');
                         }
                       });
                       },

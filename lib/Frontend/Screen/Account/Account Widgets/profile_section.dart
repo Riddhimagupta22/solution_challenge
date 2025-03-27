@@ -24,7 +24,7 @@ class ProfileSection extends StatelessWidget {
               Expanded(
                   child: Text(title,
                       style: GoogleFonts.poppins(
-                          fontSize: 16, fontWeight: FontWeight.bold))),
+                          fontSize: 16, fontWeight: FontWeight.w600))),
               if (icon != null) IconButton(onPressed: (){}, icon: Icon(icon, size: 18, color: Colors.black54))
             ],
           ),

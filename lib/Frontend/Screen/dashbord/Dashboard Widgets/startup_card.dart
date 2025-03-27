@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class StartupCard extends StatelessWidget {
   final String imageUrl;
@@ -51,12 +52,12 @@ class StartupCard extends StatelessWidget {
               children: [
                 Text(
                   title,
-                  style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+                  style: GoogleFonts.poppins(fontSize: 16, fontWeight: FontWeight.bold),
                 ),
                 SizedBox(height: 4),
                 Text(
                   subtitle,
-                  style: TextStyle(fontSize: 14, color: Colors.black54),
+                  style: GoogleFonts.poppins(fontSize: 14, color: Colors.black54),
                 ),
                 SizedBox(height: 8),
                 Row(
@@ -70,12 +71,12 @@ class StartupCard extends StatelessWidget {
                       ),
                       child: Text(
                         fundingStage,
-                        style: TextStyle(fontSize: 12, color: Colors.green[800], fontWeight: FontWeight.bold),
+                        style: GoogleFonts.poppins(fontSize: 12, color: Colors.green[800], fontWeight: FontWeight.bold),
                       ),
                     ),
                     Text(
                       "$raisedAmount raised",
-                      style: TextStyle(fontSize: 14, fontWeight: FontWeight.bold),
+                      style: GoogleFonts.poppins(fontSize: 14, fontWeight: FontWeight.bold),
                     ),
                   ],
                 ),

@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class ConnectionRequests extends StatelessWidget {
   final List<Map<String, String>> connectionRequests = [
-    {"name": "Sriharsha Majety", "role": "Swiggy", "image": "https://via.placeholder.com/150"},
-    {"name": "Sriharsha Majety", "role": "Swiggy", "image": "https://via.placeholder.com/150"},
-    {"name": "Sriharsha Majety", "role": "Swiggy", "image": "https://via.placeholder.com/150"},
-    {"name": "Sriharsha Majety", "role": "Swiggy", "image": "https://via.placeholder.com/150"},
-
+    {"name": "Sriharsha Majety", "role": "Swiggy", "image": "Assets/images/sriharsha majesty.png"},
+    {"name": "Sriharsha Majety", "role": "Swiggy", "image": "Assets/images/sriharsha majesty.png"},
+    {"name": "Sriharsha Majety", "role": "Swiggy", "image": "Assets/images/sriharsha majesty.png"},
+    {"name": "Sriharsha Majety", "role": "Swiggy", "image": "Assets/images/sriharsha majesty.png"},
   ];
 
   @override
@@ -16,36 +16,38 @@ class ConnectionRequests extends StatelessWidget {
       children: [
         SizedBox(
           width: double.infinity,
-          height: 150,
+          height: 155,
           child: ListView.builder(
             scrollDirection: Axis.horizontal,
             itemCount: connectionRequests.length,
             itemBuilder: (context, index) {
               final request = connectionRequests[index];
               return Padding(
-                padding: const EdgeInsets.only(right: 5.0,left: 8),
+                padding: const EdgeInsets.only(right: 5.0, left: 8),
                 child: Column(
                   children: [
                     CircleAvatar(
                       radius: 30,
-                      backgroundImage: NetworkImage(request["image"]!),
+                      backgroundImage: AssetImage(request["image"]!),
                     ),
                     SizedBox(height: 5),
                     Text(
                       request["name"]!,
-                      style: TextStyle(fontWeight: FontWeight.bold),
+                      style: GoogleFonts.poppins(fontWeight: FontWeight.w500),
                     ),
                     Text(
                       request["role"]!,
-                      style: TextStyle(color: Colors.grey, fontSize: 12),
+                      style: GoogleFonts.poppins(color: Colors.grey, fontSize: 12),
                     ),
+                    SizedBox(height: 5),
                     ElevatedButton(
                       onPressed: () {},
-                      child: Text("Accept"),
                       style: ElevatedButton.styleFrom(
                         shape: StadiumBorder(),
                         padding: EdgeInsets.symmetric(horizontal: 16),
+                        textStyle: GoogleFonts.poppins(fontSize: 14),
                       ),
+                      child: Text("Accept"),
                     ),
                   ],
                 ),

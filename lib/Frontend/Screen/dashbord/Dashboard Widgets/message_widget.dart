@@ -4,13 +4,13 @@ import 'package:google_fonts/google_fonts.dart';
 class MessageList extends StatelessWidget {
   final List<Map<String, dynamic>> messages = [
     {
-      "image": "Assets/images/user1.png",
+      "image": "Assets/images/IMG@1x (12).png",
       "title": "abc",
       "subtitle": "Investment proposal discussion",
       "icon": Icons.send,
     },
     {
-      "image": "Assets/images/user2.png",
+      "image": "Assets/images/IMG@1x (14).png",
       "title": "de",
       "subtitle": "Connection Request",
       "icon": Icons.person_add_alt_1,
@@ -49,7 +49,7 @@ class MessageList extends StatelessWidget {
                         children: [
                           Text(
                             message['title']!,
-                            style: GoogleFonts.poppins(fontSize: 16, fontWeight: FontWeight.bold),
+                            style: GoogleFonts.poppins(fontSize: 16, fontWeight: FontWeight.w500),
                           ),
                           SizedBox(height: 5),
                           Text(

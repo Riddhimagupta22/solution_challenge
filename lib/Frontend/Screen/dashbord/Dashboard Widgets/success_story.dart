@@ -64,12 +64,17 @@ class SuccessStoryCard extends StatelessWidget {
                 Row(
 
                   children: [
-                    CircleAvatar(backgroundImage: AssetImage("assetName"),),
+                    CircleAvatar(backgroundImage:AssetImage(
+                      imageUrl1,
+
+                    ), ),
 
                     Padding(
                       padding: const EdgeInsets.only(left: 18.0),
                       child: Column(
-                          children:[Text(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                          children:[
+                            Text(
                         name,
                         style: TextStyle(fontSize: 14, fontWeight: FontWeight.w700),
                       ),

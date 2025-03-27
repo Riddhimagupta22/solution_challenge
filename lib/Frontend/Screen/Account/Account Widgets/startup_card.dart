@@ -29,7 +29,7 @@ class StartupCard extends StatelessWidget {
             SizedBox(height: 8),
             Text(title,
                 style: GoogleFonts.poppins(
-                    fontSize: 14, fontWeight: FontWeight.bold)),
+                    fontSize: 14, fontWeight: FontWeight.w500)),
             Text(subtitle,
                 style: GoogleFonts.poppins(fontSize: 12, color: Colors.grey)),
           ],

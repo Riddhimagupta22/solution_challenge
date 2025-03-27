@@ -5,7 +5,7 @@ import 'package:solution_chanllenge/Frontend/Screen/Account/Account%20Widgets/pr
 import 'package:solution_chanllenge/Frontend/Screen/Account/Account%20Widgets/security.dart';
 import 'package:solution_chanllenge/Frontend/Screen/Account/Account%20Widgets/startup_card.dart';
 import 'package:solution_chanllenge/Frontend/Screen/Account/Account%20Widgets/tag.dart';
-import 'package:solution_chanllenge/Frontend/Screen/Account/Account%20Widgets/tag.dart';
+
 import 'package:solution_chanllenge/Frontend/Screen/Account/Account%20Widgets/toggle.dart';
 
 class Account extends StatelessWidget {

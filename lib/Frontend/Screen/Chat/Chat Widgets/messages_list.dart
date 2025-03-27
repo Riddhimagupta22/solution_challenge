@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class MessagesList extends StatelessWidget {
   final List<Map<String, String>> messages = [
@@ -7,27 +8,27 @@ class MessagesList extends StatelessWidget {
       "role": "Lead Investor, Swiggy",
       "message": "Thanks for sharing your pitch",
       "time": "2m ago",
-      "image": "https://via.placeholder.com/150"
-    }, {
+      "image": "Assets/images/sriharsha majesty.png"
+    },{
       "name": "Sriharsha Majety",
       "role": "Lead Investor, Swiggy",
       "message": "Thanks for sharing your pitch",
       "time": "2m ago",
-      "image": "https://via.placeholder.com/150"
-    }, {
+      "image": "Assets/images/sriharsha majesty.png"
+    },{
       "name": "Sriharsha Majety",
       "role": "Lead Investor, Swiggy",
       "message": "Thanks for sharing your pitch",
       "time": "2m ago",
-      "image": "https://via.placeholder.com/150"
-    }, {
-      "name": "Sriharsha Majety",
-      "role": "Lead Investor, Swiggy",
-      "message": "Thanks for sharing your pitch",
-      "time": "2m ago",
-      "image": "https://via.placeholder.com/150"
+      "image": "Assets/images/sriharsha majesty.png"
     },
-
+    {
+      "name": "Sriharsha Majety",
+      "role": "Lead Investor, Swiggy",
+      "message": "Thanks for sharing your pitch",
+      "time": "2m ago",
+      "image": "Assets/images/sriharsha majesty.png"
+    },
   ];
 
   @override
@@ -39,19 +40,19 @@ class MessagesList extends StatelessWidget {
       itemBuilder: (context, index) {
         final message = messages[index];
         return Card(
-          margin: EdgeInsets.symmetric(horizontal: 10,vertical: 10),
+          margin: EdgeInsets.symmetric(horizontal: 10, vertical: 10),
           shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
           child: ListTile(
             contentPadding: EdgeInsets.symmetric(horizontal: 16, vertical: 12),
             leading: CircleAvatar(
               radius: 25,
-              backgroundImage: NetworkImage(message["image"]!),
+              backgroundImage: AssetImage(message["image"]!),
             ),
             title: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Text(message["name"]!, style: TextStyle(fontWeight: FontWeight.bold)),
-                Text(message["time"]!, style: TextStyle(color: Colors.grey, fontSize: 12)),
+                Text(message["name"]!, style: GoogleFonts.poppins(fontWeight: FontWeight.w400)),
+                Text(message["time"]!, style: GoogleFonts.poppins(color: Colors.grey, fontSize: 12)),
               ],
             ),
             subtitle: Column(
@@ -59,12 +60,12 @@ class MessagesList extends StatelessWidget {
               children: [
                 Text(
                   message["role"]!,
-                  style: TextStyle(color: Colors.grey, fontSize: 12),
+                  style: GoogleFonts.poppins(color: Colors.grey, fontSize: 12),
                 ),
                 SizedBox(height: 5),
                 Text(
                   message["message"]!,
-                  style: TextStyle(fontSize: 14),
+                  style: GoogleFonts.poppins(fontSize: 14),
                 ),
               ],
             ),

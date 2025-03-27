@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:solution_chanllenge/Frontend/Screen/Chat/Chat%20Widgets/connection_request.dart';
 import 'package:solution_chanllenge/Frontend/Screen/Chat/Chat%20Widgets/messages_list.dart';
 
@@ -8,7 +9,7 @@ class Messages extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Messages", style: TextStyle(fontWeight: FontWeight.bold)),
+        title: Text("Messages", style:  GoogleFonts.poppins(fontWeight: FontWeight.w600,fontSize: 23)),
         actions: [
           IconButton(
             icon: Icon(Icons.search),
@@ -16,7 +17,7 @@ class Messages extends StatelessWidget {
           ),
         ],
       ),
-      body: SingleChildScrollView( // Allows the entire page to be scrollable
+      body: SingleChildScrollView(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -24,7 +25,7 @@ class Messages extends StatelessWidget {
               padding: const EdgeInsets.only(left: 16.0,right: 16,top: 2),
               child: Text(
                 "Connection Requests",
-                style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                style: GoogleFonts.poppins(fontSize: 18, fontWeight: FontWeight.w500),
               ),
             ),
             Padding(
