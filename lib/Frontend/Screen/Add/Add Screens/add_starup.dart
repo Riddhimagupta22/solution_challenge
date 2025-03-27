@@ -54,7 +54,7 @@ class _AddStartupScreenState extends State<AddStartupScreen> {
                             value: _progressValue, // Dynamic progress value
                             backgroundColor: Colors.grey[300],
                             valueColor:
-                            AlwaysStoppedAnimation<Color>(Colors.pink),
+                            AlwaysStoppedAnimation<Color>(Colors.blueAccent),
                           ),
                         ),
                         SizedBox(width: 10),
@@ -62,7 +62,7 @@ class _AddStartupScreenState extends State<AddStartupScreen> {
                           padding:
                           EdgeInsets.symmetric(horizontal: 8, vertical: 4),
                           decoration: BoxDecoration(
-                            color: Colors.pink,
+                            color: Colors.blueAccent,
                             borderRadius: BorderRadius.circular(12),
                           ),
                           child: Text(

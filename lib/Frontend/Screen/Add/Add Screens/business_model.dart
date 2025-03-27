@@ -7,13 +7,32 @@ class BusinessModel extends StatefulWidget {
   const BusinessModel({super.key});
 
   @override
-  State<BusinessModel> createState() => _BusinessModelState();
+  State<BusinessModel> createState() => _BusinessModelState(
+  );
 }
 
 class _BusinessModelState extends State<BusinessModel> {
+  double _progressValue = 0.4; // Initial progress value
+  final TextEditingController _startupNameController = TextEditingController();
+  final TextEditingController _businessModelController = TextEditingController();
+  final TextEditingController _monthlyRevenueController = TextEditingController();
+  final TextEditingController _activeUsersController = TextEditingController();
+  String? _selectedIndustry;
+
+  void _updateProgress() {
+    double progress = 0.4;
+
+    if (_startupNameController.text.isNotEmpty) progress += 0.2;
+    if (_selectedIndustry != null) progress += 0.2;
+    if (_businessModelController.text.isNotEmpty) progress += 0.2;
+    if (_monthlyRevenueController.text.isNotEmpty ||
+        _activeUsersController.text.isNotEmpty) progress += 0.2;
+
+    setState(() {
+      _progressValue = progress;
+    });}
 
   @override
-
   Widget build(BuildContext context) {
     String? selectedValue;
 
@@ -41,23 +60,25 @@ class _BusinessModelState extends State<BusinessModel> {
                 children: [
                   Expanded(
                     child: LinearProgressIndicator(
-                      value: 0.2,
+                      value: _progressValue, // Dynamic progress value
                       backgroundColor: Colors.grey[300],
-                      valueColor: AlwaysStoppedAnimation<Color>(Colors.pink),
+                      valueColor:
+                      AlwaysStoppedAnimation<Color>(Colors.blueAccent),
                     ),
                   ),
                   SizedBox(width: 10),
                   Container(
-                    padding: EdgeInsets.symmetric(horizontal: 8, vertical: 4),
+                    padding:
+                    EdgeInsets.symmetric(horizontal: 8, vertical: 4),
                     decoration: BoxDecoration(
-                      color: Colors.pink,
+                      color: Colors.blueAccent,
                       borderRadius: BorderRadius.circular(12),
                     ),
                     child: Text(
-                      "-6",
-                      style: TextStyle(
-                          color: Colors.white, fontWeight: FontWeight.bold),
-                    ),
+                        "${(_progressValue * 100).toInt()}%", // Show progress %
+                        style: TextStyle(
+                            color: Colors.white,
+                            fontWeight: FontWeight.bold)),
                   ),
                 ],
               ),
@@ -65,7 +86,7 @@ class _BusinessModelState extends State<BusinessModel> {
             Padding(
               padding: const EdgeInsets.all(8.0),
               child: Text(
-                "Step 1: Business Model",
+                "Step 2: Business Model",
                 style: GoogleFonts.poppins(fontWeight: FontWeight.w500, color: Colors.grey),
               ),
             ),
