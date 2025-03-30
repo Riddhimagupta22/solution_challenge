@@ -18,8 +18,10 @@ class StartupCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var srcwidth = MediaQuery.of(context).size.width;
+    var srcheigth = MediaQuery.of(context).size.height;
     return Container(
-      width: 325,
+      width: srcwidth*325,
       height: 291,
       margin: EdgeInsets.symmetric(horizontal: 5, vertical: 10),
       padding: EdgeInsets.only(left: 8,right: 8,top: 15),
@@ -42,7 +44,7 @@ class StartupCard extends StatelessWidget {
             child: Image.asset(
               imageUrl,
               height: 150,
-              width: 331,
+              width: srcwidth*331,
             ),
           ),
           Padding(

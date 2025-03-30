@@ -9,11 +9,13 @@ class FeatureCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var srcwidth = MediaQuery.of(context).size.width;
+    var srcheigth = MediaQuery.of(context).size.height;
     return Expanded(
       child: Container(
-        width: 110,
-        height: 70,
-        padding: EdgeInsets.only(top: 10,left: 10),
+        width: srcwidth*.110,
+        height: srcheigth*.08,
+        padding: EdgeInsets.only(top: srcwidth*.02,left: srcwidth*.03),
         decoration: BoxDecoration(
           color: Colors.white,
           borderRadius: BorderRadius.circular(8),
@@ -32,13 +34,13 @@ class FeatureCard extends StatelessWidget {
           children: [
             Text(
               title,
-              style: GoogleFonts.poppins(fontSize: 12, color: Colors.black54),
+              style: GoogleFonts.poppins(fontSize: srcwidth*.03, color: Colors.black54),
             ),
-            SizedBox(height: 3,),
+            SizedBox(height: srcheigth*.009,),
 
             Text(
               value,
-              style: GoogleFonts.poppins(fontSize: 20, fontWeight: FontWeight.bold),
+              style: GoogleFonts.poppins(fontSize: srcwidth*.05, fontWeight: FontWeight.w700),
             ),
           ],
         ),
@@ -50,19 +52,20 @@ class FeatureCard extends StatelessWidget {
 class DashboardStats extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    var srcwidth = MediaQuery.of(context).size.width;
     return Padding(
       padding: EdgeInsets.symmetric( vertical: 10),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           FeatureCard(title: "Portfolio Value", value: "\$2.4M"),
-          SizedBox(width: 5,),
+          SizedBox(width: srcwidth*.02,),
 
           FeatureCard(title: "Connections", value: "342"),
-          SizedBox(width: 5,),
+          SizedBox(width: srcwidth*.02,),
 
           FeatureCard(title: "Pending", value: "12"),
-          SizedBox(width: 5,),
+          SizedBox(width: srcwidth*.02,),
         ],
       ),
     );

@@ -17,7 +17,7 @@ class RoleChoosing extends StatelessWidget {
       appBar: AppBar(
         title: Text(
           "SparkHub",
-          style: GoogleFonts.inter(fontSize: 23, fontWeight: FontWeight.w800),
+          style: GoogleFonts.inter(fontSize: 23, fontWeight: FontWeight.w700),
         ),
       ),
       body: SafeArea(
@@ -28,7 +28,7 @@ class RoleChoosing extends StatelessWidget {
               Center(
                 child: Text(
                   "Choose Your Role",
-                  style: GoogleFonts.poppins(fontSize: 22, fontWeight: FontWeight.w700, height: 1.2),
+                  style: GoogleFonts.poppins(fontSize: 22, fontWeight: FontWeight.w600, height: 1.2),
                 ),
               ),
               Text(

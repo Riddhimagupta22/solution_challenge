@@ -104,11 +104,23 @@ class SignUpScreen extends StatelessWidget {
                       style: OutlinedButton.styleFrom(
                         minimumSize: Size(double.infinity, scrHeight*.045),
                       ),
-                      child: Text("Continue with Google",style: GoogleFonts.poppins(
-                          letterSpacing: 1,
-                          fontSize: 15,
-                          fontWeight: FontWeight.w400,
-                          color: Colors.black),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        children: [
+                          Padding(
+                            padding: const EdgeInsets.only(top: 3,bottom: 3),
+                            child: CircleAvatar(
+                              radius: 18,
+                              backgroundImage: AssetImage("Assets/images/googlelogo.jpg"),
+                            ),
+                          ),
+                          Text("Continue with Google",style: GoogleFonts.poppins(
+                              letterSpacing: 1,
+                              fontSize: 15,
+                              fontWeight: FontWeight.w500,
+                              color: Colors.black),
+                          ),
+                        ],
                       ),),
                     SizedBox(height:  scrHeight * 0.13),
                     GestureDetector(

@@ -50,10 +50,10 @@ class Account extends StatelessWidget {
                     ),
                     SizedBox(height: 8),
                     Text(
-                      "xyz",
+                      "Ravi Vittal",
                       style: GoogleFonts.poppins(
                           fontSize: 18,
-                          fontWeight: FontWeight.bold,
+                          fontWeight: FontWeight.w500,
                           color: Colors.white),
                     ),
                     Row(
@@ -76,7 +76,7 @@ class Account extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  PersonalInfo(label: "Full Name", value: "Alexander Mitchell"),
+                  PersonalInfo(label: "Full Name", value: "Ravi Vittal"),
                   PersonalInfo(
                       label: "Bio",
                       value:

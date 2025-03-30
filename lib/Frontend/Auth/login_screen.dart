@@ -128,8 +128,8 @@ class _LoginScreenState extends State<LoginScreen> {
                           minimumSize: Size(scrWidth * .5, scrHeight * .045),
                           backgroundColor: Colors.blueAccent,
                           foregroundColor: Colors.black),
-                      child: const Text("Log In",
-                          style: TextStyle(color: Colors.white)),
+                      child: Text("Log In",
+                          style: GoogleFonts.poppins(color: Colors.white)),
                     ),
                     SizedBox(height: scrHeight * 0.02),
                     Text(
@@ -147,27 +147,36 @@ class _LoginScreenState extends State<LoginScreen> {
                       onPressed: () {
                         AuthService().signUpwithGoogle().then((user) {
                           if (user != null) {
-                            Get.snackbar(
-                                "", 'Signed in as ${user.displayName}');
                             Navigator.pushReplacement(
                                 context,
                                 MaterialPageRoute(
                                     builder: (context) => RoleChoosing()));
                           } else {
-                            Get.snackbar('Error', 'Sign In failed');
                           }
                         });
                       },
                       style: OutlinedButton.styleFrom(
                         minimumSize: Size(double.infinity, scrHeight * .045),
                       ),
-                      child: Text(
-                        "Continue with Google",
-                        style: GoogleFonts.poppins(
-                            letterSpacing: 1,
-                            fontSize: 15,
-                            fontWeight: FontWeight.w400,
-                            color: Colors.black),
+                      child:  Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        children: [
+                          Padding(
+                            padding: const EdgeInsets.only(top: 3,bottom: 3),
+                            child: CircleAvatar(
+                              radius: 18,
+                              backgroundImage: AssetImage("Assets/images/googlelogo.jpg"),
+                            ),
+                          ),
+                          Text(
+                            "Continue with Google",
+                            style: GoogleFonts.poppins(
+                                letterSpacing: 1,
+                                fontSize: 15,
+                                fontWeight: FontWeight.w500,
+                                color: Colors.black),
+                          ),
+                        ],
                       ),
                     ),
                     SizedBox(height: scrHeight * 0.18),

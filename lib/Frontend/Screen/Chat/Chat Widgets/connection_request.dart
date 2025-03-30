@@ -4,8 +4,8 @@ import 'package:google_fonts/google_fonts.dart';
 class ConnectionRequests extends StatelessWidget {
   final List<Map<String, String>> connectionRequests = [
     {"name": "Sriharsha Majety", "role": "Swiggy", "image": "Assets/images/sriharsha majesty.png"},
-    {"name": "Sriharsha Majety", "role": "Swiggy", "image": "Assets/images/sriharsha majesty.png"},
-    {"name": "Sriharsha Majety", "role": "Swiggy", "image": "Assets/images/sriharsha majesty.png"},
+    {"name": "Sara Sharma", "role": "Swiggy", "image": "Assets/images/IMG@1x (12).png"},
+    {"name": "Sahil Verma", "role": "Swiggy", "image": "Assets/images/IMG@1x (14).png"},
     {"name": "Sriharsha Majety", "role": "Swiggy", "image": "Assets/images/sriharsha majesty.png"},
   ];
 

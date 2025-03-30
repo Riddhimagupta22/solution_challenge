@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:solution_chanllenge/Frontend/Features/Widgets/custom_widgets.dart';
 import 'package:solution_chanllenge/Frontend/Screen/dashbord/Dashboard%20Widgets/feature_widgets.dart';
 import 'package:solution_chanllenge/Frontend/Screen/dashbord/Dashboard%20Widgets/message_widget.dart';
@@ -33,8 +34,8 @@ class Dashboard extends StatelessWidget {
         title: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text("Welcome", style: TextStyle(fontSize: 16, fontWeight: FontWeight.w600)),
-            Text("User Name", style: TextStyle(fontSize: 14, color: Colors.grey[600])),
+            Text("Welcome", style: GoogleFonts.poppins(fontSize: 16, fontWeight: FontWeight.w600)),
+            Text("Ravi Vittal", style: GoogleFonts.poppins(fontSize: 14, color: Colors.grey[600])),
           ],
         ),
         actions: [

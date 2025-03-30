@@ -5,13 +5,13 @@ class MessageList extends StatelessWidget {
   final List<Map<String, dynamic>> messages = [
     {
       "image": "Assets/images/IMG@1x (12).png",
-      "title": "abc",
+      "title": "Sara sharma",
       "subtitle": "Investment proposal discussion",
       "icon": Icons.send,
     },
     {
       "image": "Assets/images/IMG@1x (14).png",
-      "title": "de",
+      "title": "Sahil Verma",
       "subtitle": "Connection Request",
       "icon": Icons.person_add_alt_1,
     },

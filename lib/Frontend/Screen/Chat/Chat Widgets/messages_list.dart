@@ -10,24 +10,24 @@ class MessagesList extends StatelessWidget {
       "time": "2m ago",
       "image": "Assets/images/sriharsha majesty.png"
     },{
-      "name": "Sriharsha Majety",
+      "name": "Gopal Aggrawal",
       "role": "Lead Investor, Swiggy",
       "message": "Thanks for sharing your pitch",
       "time": "2m ago",
-      "image": "Assets/images/sriharsha majesty.png"
+      "image": "Assets/images/IMG@1x (14).png"
     },{
-      "name": "Sriharsha Majety",
+      "name": "Sanjiv",
       "role": "Lead Investor, Swiggy",
       "message": "Thanks for sharing your pitch",
       "time": "2m ago",
-      "image": "Assets/images/sriharsha majesty.png"
+      "image": "Assets/images/IMG@1x (13).png"
     },
     {
-      "name": "Sriharsha Majety",
+      "name": "Leena Nair",
       "role": "Lead Investor, Swiggy",
       "message": "Thanks for sharing your pitch",
       "time": "2m ago",
-      "image": "Assets/images/sriharsha majesty.png"
+      "image": "Assets/images/IMG@1x (12).png"
     },
   ];
 
